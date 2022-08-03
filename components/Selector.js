@@ -38,11 +38,11 @@ export default function Selector() {
   const [selected, setSelected] = useState(null);
 
   return (
-    <div className='text-sm font-semibold w-52 text-light-text dark:text-slate-100 '>
+    <div className=' font-semibold w-52 text-light-text dark:text-slate-300 '>
       <Listbox value={selected} onChange={setSelected}>
         {({ open }) => (
           <>
-            <div className='relative mt-1'>
+            <div className='relative mt-1 sm:m-0'>
               <Listbox.Button className='relative w-full py-4 pl-3 pr-10 text-left bg-white dark:bg-dark-elements rounded-md shadow-sm cursor-default focus:outline-none '>
                 <span className='flex items-center'>
                   <span className='block ml-3 truncate'>
@@ -51,7 +51,7 @@ export default function Selector() {
                 </span>
                 <span className='absolute inset-y-0 right-0 flex items-center pr-2 ml-3 pointer-events-none'>
                   <SelectorIcon
-                    className='w-5 h-5 text-light-text dark:text-slate-100'
+                    className='w-5 h-5 text-light-text dark:text-slate-300'
                     aria-hidden='true'
                   />
                 </span>

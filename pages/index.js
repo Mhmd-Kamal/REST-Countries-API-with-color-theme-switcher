@@ -11,7 +11,7 @@ const Home = ({}) => {
   return (
     <div className='flex flex-col items-center min-h-screen bg-light-bg dark:bg-dark-bg'>
       <NavBar />
-      <div className='flex flex-col w-full px-4 py-6 '>
+      <div className='flex flex-col w-full px-4 py-6 md:px-20 md:py-12'>
         <FilterForm />
         <CountriesGrid countries={fakeData} />
       </div>
