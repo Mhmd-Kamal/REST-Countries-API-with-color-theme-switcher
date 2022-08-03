@@ -9,7 +9,7 @@ import fakeData from '../public/fakeData'; //TODO remove the file in public afte
 import NavBar from '../components/NavBar';
 const Home = ({}) => {
   return (
-    <div className='flex flex-col items-center min-h-screen bg-light-bg'>
+    <div className='flex flex-col items-center min-h-screen bg-light-bg dark:bg-dark-bg'>
       <NavBar />
       <div className='flex flex-col w-full px-4 py-6 '>
         <FilterForm />

@@ -38,12 +38,12 @@ export default function Selector() {
   const [selected, setSelected] = useState(null);
 
   return (
-    <div className='text-sm font-semibold w-52 text-light-text'>
+    <div className='text-sm font-semibold w-52 text-light-text dark:text-slate-100 '>
       <Listbox value={selected} onChange={setSelected}>
         {({ open }) => (
           <>
             <div className='relative mt-1'>
-              <Listbox.Button className='relative w-full py-4 pl-3 pr-10 text-left bg-white rounded-md shadow-sm cursor-default focus:outline-none '>
+              <Listbox.Button className='relative w-full py-4 pl-3 pr-10 text-left bg-white dark:bg-dark-elements rounded-md shadow-sm cursor-default focus:outline-none '>
                 <span className='flex items-center'>
                   <span className='block ml-3 truncate'>
                     {selected ? selected.name : 'Filter by Region'}
@@ -51,7 +51,7 @@ export default function Selector() {
                 </span>
                 <span className='absolute inset-y-0 right-0 flex items-center pr-2 ml-3 pointer-events-none'>
                   <SelectorIcon
-                    className='w-5 h-5 text-light-text'
+                    className='w-5 h-5 text-light-text dark:text-slate-100'
                     aria-hidden='true'
                   />
                 </span>
@@ -64,7 +64,7 @@ export default function Selector() {
                 leaveFrom='opacity-100'
                 leaveTo='opacity-0'
               >
-                <Listbox.Options className='absolute z-10 w-full py-1 mt-1 overflow-auto bg-white rounded-md shadow-lg max-h-56 focus:outline-none'>
+                <Listbox.Options className='absolute z-10 w-full py-1 mt-1 overflow-auto bg-white rounded-md shadow-lg max-h-56 focus:outline-none dark:bg-dark-elements'>
                   {people.map((person) => (
                     <Listbox.Option
                       key={person.id}
