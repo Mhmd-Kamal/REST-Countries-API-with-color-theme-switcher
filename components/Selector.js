@@ -1,7 +1,9 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid';
+import { useSetRecoilState } from 'recoil';
+import { filterAtom } from '../utils/recoil/atoms';
 
 const people = [
   {
@@ -14,7 +16,7 @@ const people = [
   },
   {
     id: 3,
-    name: 'America',
+    name: 'Americas',
   },
 
   {
@@ -36,14 +38,19 @@ function classNames(...classes) {
 
 export default function Selector() {
   const [selected, setSelected] = useState(null);
+  const setFilter = useSetRecoilState(filterAtom);
+
+  useEffect(() => {
+    setFilter(selected ? selected.name : '');
+  }, [selected]);
 
   return (
-    <div className=' font-semibold w-52 text-light-text dark:text-slate-300 '>
+    <div className='font-semibold w-52 text-light-text dark:text-slate-300'>
       <Listbox value={selected} onChange={setSelected}>
         {({ open }) => (
           <>
             <div className='relative mt-1 sm:m-0'>
-              <Listbox.Button className='relative w-full py-4 pl-3 pr-10 text-left bg-white dark:bg-dark-elements rounded-md shadow-sm cursor-default focus:outline-none '>
+              <Listbox.Button className='relative w-full py-4 pl-3 pr-10 text-left bg-white rounded-md shadow-sm cursor-default dark:bg-dark-elements focus:outline-none '>
                 <span className='flex items-center'>
                   <span className='block ml-3 truncate'>
                     {selected ? selected.name : 'Filter by Region'}

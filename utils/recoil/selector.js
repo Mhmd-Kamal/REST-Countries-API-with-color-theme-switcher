@@ -1,11 +1,23 @@
 import { selector } from 'recoil';
+import { AllCountriesAtom, filterAtom, queryAtom } from './atoms';
 
-export const countriesSelector = selector({
+export const filteredCountriesSelector = selector({
   key: 'countriesSelector',
-  get: async ({ get }) => {
-    const res = await fetch('https://restcountries.com/v2/all');
-    if (res.error) throw res.error;
-    const data = await res.json();
-    return data;
+  get: ({ get }) => {
+    const allCountries = get(AllCountriesAtom);
+    const filter = get(filterAtom);
+    const query = get(queryAtom);
+    console.log(query);
+
+    if (!filter || filter === 'All') {
+      return allCountries.filter((country) =>
+        country.name.toLowerCase().includes(query.toLowerCase())
+      );
+    }
+    return allCountries
+      .filter((country) => country.region === filter)
+      .filter((country) =>
+        country.name.toLowerCase().includes(query.toLowerCase())
+      );
   },
 });

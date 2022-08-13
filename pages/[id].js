@@ -1,16 +1,19 @@
 import { ArrowLeftIcon } from '@heroicons/react/solid';
 import { useRouter } from 'next/router';
+import { useRecoilValue } from 'recoil';
+
 import NavBar from '../components/NavBar';
 
-import fakeData from '../public/fakeData';
+import { countriesSelector } from '../utils/recoil/selector';
 
 function CountryPage() {
+  const AllCountries = useRecoilValue(countriesSelector);
   const router = useRouter();
   const {
     query: { id },
   } = router;
 
-  const country = fakeData.find((item) => item.alpha3Code === id);
+  const country = AllCountries.find((item) => item.alpha3Code === id);
   console.log(country);
   return (
     <div>
@@ -25,53 +28,53 @@ function CountryPage() {
           <div>
             <h2>{country.name}</h2>
             <div>
-              <p className=' font-semibold text-sm'>
+              <p className='text-sm font-semibold '>
                 Native Name:
-                <span className='font-normal pl-1 text-slate-300'>
+                <span className='pl-1 font-normal text-slate-300'>
                   {country.region}
                 </span>
               </p>
-              <p className=' font-semibold text-sm'>
+              <p className='text-sm font-semibold '>
                 Population:
-                <span className='font-normal pl-1 text-slate-300'>
+                <span className='pl-1 font-normal text-slate-300'>
                   {country.region}
                 </span>
               </p>
-              <p className=' font-semibold text-sm'>
+              <p className='text-sm font-semibold '>
                 Region:
-                <span className='font-normal pl-1 text-slate-300'>
+                <span className='pl-1 font-normal text-slate-300'>
                   {country.region}
                 </span>
               </p>
-              <p className=' font-semibold text-sm'>
+              <p className='text-sm font-semibold '>
                 Sub Region:
-                <span className='font-normal pl-1 text-slate-300'>
+                <span className='pl-1 font-normal text-slate-300'>
                   {country.region}
                 </span>
               </p>
-              <p className=' font-semibold text-sm'>
+              <p className='text-sm font-semibold '>
                 Capital:
-                <span className='font-normal pl-1 text-slate-300'>
+                <span className='pl-1 font-normal text-slate-300'>
                   {country.region}
                 </span>
               </p>
             </div>
             <div>
-              <p className=' font-semibold text-sm'>
+              <p className='text-sm font-semibold '>
                 Top Level Domain:
-                <span className='font-normal pl-1 text-slate-300'>
+                <span className='pl-1 font-normal text-slate-300'>
                   {country.region}
                 </span>
               </p>
-              <p className=' font-semibold text-sm'>
+              <p className='text-sm font-semibold '>
                 Currencies:
-                <span className='font-normal pl-1 text-slate-300'>
+                <span className='pl-1 font-normal text-slate-300'>
                   {country.region}
                 </span>
               </p>
-              <p className=' font-semibold text-sm'>
+              <p className='text-sm font-semibold '>
                 Languages:
-                <span className='font-normal pl-1 text-slate-300'>
+                <span className='pl-1 font-normal text-slate-300'>
                   {country.region}
                 </span>
               </p>
