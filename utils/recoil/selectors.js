@@ -7,7 +7,6 @@ export const filteredCountriesSelector = selector({
     const allCountries = get(AllCountriesAtom);
     const filter = get(filterAtom);
     const query = get(queryAtom);
-    console.log(query);
 
     if (!filter || filter === 'All') {
       return allCountries.filter((country) =>

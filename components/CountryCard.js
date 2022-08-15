@@ -4,19 +4,20 @@ function CountryCard({ country }) {
   const router = useRouter();
   const url = `/${country.alpha3Code}`;
   return (
-    <div
-      onClick={() => router.push(url)}
-      className='flex flex-col bg-white rounded-md shadow-sm dark:bg-dark-elements text-light-text dark:text-slate-200'
-    >
+    <div className='flex flex-col w-[270px] bg-white rounded-md shadow-sm dark:bg-dark-elements text-light-text dark:text-slate-200'>
       <div>
         <img
-          className='rounded-t-md object-fit w-full h-[170px]'
-          src={country.flags.png}
+          onClick={() => router.push(url)}
+          className='rounded-t-md object-cover w-full h-[170px]  cursor-pointer'
+          src={country.flag}
           alt='country flag'
         />
       </div>
       <div className='p-6'>
-        <h2 className='text-base font-extrabold tracking-wider'>
+        <h2
+          onClick={() => router.push(url)}
+          className='text-base font-extrabold tracking-wider cursor-pointer'
+        >
           {country.name}
         </h2>
         <div className='flex flex-col gap-2 py-4 '>

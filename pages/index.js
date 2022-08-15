@@ -2,10 +2,7 @@ import Head from 'next/head';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { useEffect } from 'react';
 
-import {
-  countriesSelector,
-  filteredCountriesSelector,
-} from '../utils/recoil/selector';
+import { filteredCountriesSelector } from '../utils/recoil/selectors';
 
 import FilterForm from '../components/FilterForm';
 import CountriesGrid from '../components/ContriesGrid';
@@ -40,7 +37,7 @@ export async function getStaticProps() {
     const res = await fetch('https://restcountries.com/v2/all');
 
     const data = await res.json();
-    return { props: { countries: data } };
+    return { props: { countries: data }, revalidate: 604800 };
   } catch (error) {
     console.log(error);
   }

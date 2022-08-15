@@ -1,13 +1,20 @@
 import CountryCard from './CountryCard';
+import Loadingplaceholder from './Loadingplaceholder';
 
 function CountriesGrid({ countries }) {
   return (
-    <div className='flex flex-col items-center gap-8 p-8 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-20 md:px-0 md:py-12'>
+    <div className='flex flex-col items-center gap-8 p-8 md:grid md:grid-cols-2 xl:grid-cols-4 md:gap-20 md:px-0 md:py-12'>
       {countries.map((country, index) => (
-        <CountryCard country={country} key={index} />
+        <CountryCard key={index} country={country} />
       ))}
     </div>
   );
 }
 
 export default CountriesGrid;
+
+// {
+//   /* <div className='object-cover scale-50 '>
+//           <Loadingplaceholder key={index} />
+//         </div> */
+// }
