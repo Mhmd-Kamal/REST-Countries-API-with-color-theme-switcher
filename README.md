@@ -1,23 +1,26 @@
-# Next.js + Tailwind CSS Example
+# Project Desription
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+This is a solution to the [FrontendMentor Todo App Challenge](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca) using Nextjs, Tailwindcss, recoil.
+Figma design is not available for this project, so the design dimensions, margins, and padding are not pixel perfect.
 
-## Deploy your own
+## Giving feedback
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+Feedback is always welcome, so if you have any to give on this challenge please leave a comment.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+Have fun! 🚀
 
-## How to use
+## Running the project
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+you will need nodejs and npm to run this project.
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-# or
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
+1. git clone this repository.
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+2. cd into the folder.
+
+3. run ```yarn install``` to install all the dependencies.
+
+4. run ```yarn dev``` to start the development server, or run ```yarn build``` then ```yarn start``` to start the project in production mode.
+
+5. open the browser and navigate to <http://localhost:3000/>
+
+6. you should see the todo app.
