@@ -1,5 +1,4 @@
 import CountryCard from './CountryCard';
-import Loadingplaceholder from './Loadingplaceholder';
 
 function CountriesGrid({ countries }) {
   return (
@@ -12,9 +11,3 @@ function CountriesGrid({ countries }) {
 }
 
 export default CountriesGrid;
-
-// {
-//   /* <div className='object-cover scale-50 '>
-//           <Loadingplaceholder key={index} />
-//         </div> */
-// }
