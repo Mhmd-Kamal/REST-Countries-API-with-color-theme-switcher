@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 import { ArrowNarrowLeftIcon } from '@heroicons/react/solid';
 
 import NavBar from '../components/NavBar';
@@ -7,6 +8,10 @@ function CountryPage({ country, borders }) {
   console.log(country);
   return (
     <div className='min-h-screen text-light-text bg-light-bg dark:bg-dark-bg dark:text-slate-200'>
+      <Head>
+        <title>{country.name}</title>
+        <link rel='shortcut icon' href={country.flag} type='image/x-icon' />
+      </Head>
       <NavBar />
       <div className='flex flex-col gap-16 py-10 px-7 sm:px-24'>
         <Link href='/'>

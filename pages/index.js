@@ -21,6 +21,13 @@ const Home = ({ countries }) => {
 
   return (
     <div className='flex flex-col items-center min-h-screen bg-light-bg dark:bg-dark-bg'>
+      <Head>
+        <title>Where in the world app?</title>
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <link rel='shortcut icon' href='/globe.png' type='image/x-icon' />
+        <meta name='description' content='Where in the world app?' />
+        <meta name='keywords' content='Where in the world app?' />
+      </Head>
       <NavBar />
       <div className='flex flex-col w-full px-4 py-6 md:px-20 md:py-12'>
         <FilterForm />

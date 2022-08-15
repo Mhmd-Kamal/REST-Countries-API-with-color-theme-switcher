@@ -50,7 +50,7 @@ export default function Selector() {
         {({ open }) => (
           <>
             <div className='relative mt-1 sm:m-0'>
-              <Listbox.Button className='relative w-full py-4 pl-3 pr-10 text-left bg-white rounded-md shadow-sm cursor-default dark:bg-dark-elements focus:outline-none '>
+              <Listbox.Button className='relative w-full py-4 pl-3 pr-10 text-left bg-white rounded-md shadow-sm cursor-pointer dark:bg-dark-elements focus:outline-none '>
                 <span className='flex items-center'>
                   <span className='block ml-3 truncate'>
                     {selected ? selected.name : 'Filter by Region'}
